@@ -1,0 +1,10 @@
+mixin news(img,title,text)
+    .news
+        a(href="/").news__image.lazy(data-src= img)
+        .news__content
+            a(href="/").news__title= title
+            .news__text
+                p= text
+            .news__date 17
+                span июл 2020
+            a(href="/").news__more Читать далее
