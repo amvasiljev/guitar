@@ -8,7 +8,9 @@
 
 
 
+@import 'blocks/advantage/advantage';
 @import 'blocks/button/button';
+@import 'blocks/course/course';
 @import 'blocks/footer/footer';
 
 @import 'blocks/headline/headline';
@@ -19,10 +21,20 @@
 @import 'blocks/section/section';
 @import 'blocks/slide/slide';
 @import 'blocks/slider/slider';
+@import 'blocks/title/title';
 
 
 * {
   font-family: 'Open Sans', sans-serif;
+}
+
+p{
+  font-weight: 400;
+  font-style: normal;
+  .rem(16);
+  color: @text;
+  line-height: 26px;
+  margin-bottom: 10px;
 }
 
 // html,

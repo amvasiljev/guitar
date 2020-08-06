@@ -1,0 +1,38 @@
+.course{
+    width: calc(33% - 15px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+ 
+
+    &__image{
+        flex: 0 0 215px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    &__content{
+        flex: 0 0 250px;
+        background-color: @bg;
+        padding: 35 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title{
+        .rem(24);
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: @bk;
+        text-align: center;
+    }
+    &__caption{
+        .rem(18);
+        color: @bk;
+        font-weight: 600;
+        line-height: 1.44;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+}

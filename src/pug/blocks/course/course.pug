@@ -1,0 +1,7 @@
+mixin course(img,title,caption)
+    .course
+        a(href="").course__image.lazy(data-src= img)
+        .course__content
+            .course__title= title
+            .course__caption= caption
+            +button('Подробнее','','','/')
