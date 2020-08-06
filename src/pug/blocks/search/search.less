@@ -1,0 +1,23 @@
+.search{
+    display: flex;
+    flex-direction: row-reverse;
+    border: 1px solid @line_box;
+    margin: 30px 0;
+    &__input{
+        height: 35px;
+        width: calc(100% - 35px);
+        padding: 0 10px 0 5px;
+        .rem(12);
+        color: @bk_2;
+    }
+    &__submit{
+        background-color: @wt !important;
+        height: 35px;
+        width: 35px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 15px;
+        flex: 0 0 35px;
+        cursor: pointer;
+    }
+}

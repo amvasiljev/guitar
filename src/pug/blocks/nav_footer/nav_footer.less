@@ -1,0 +1,17 @@
+.nav-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &__item{
+        .rem(16);
+        font-weight: normal;
+        color: @nav;
+        margin-bottom: 15px;
+        transition: all 0.3s;
+        &:hover,&:active,&:focus{
+            color: @red;
+        }
+    }
+}

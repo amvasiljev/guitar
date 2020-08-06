@@ -1,9 +1,19 @@
 .phone{
-
+    display: block;
     &_headline{
         .rem(12);
         color: @wt;
         margin-left: 3px;
         font-weight: 700;
+    }
+    &_footer{
+        .rem(30);
+        font-weight: 600;
+        color: @nav;
+        transition: all 0.3s;
+        margin-bottom: 15px;
+        &:hover,&:active,&:focus{
+            color: @red;
+        }
     }
 }
