@@ -58,15 +58,16 @@ $(function () {
 // // slider 
 
 
-// $('.slider__box').slick({
-//   lazyload: 'ondemand',
-//   // infinite: false,
-//   fade: true,
-//   cssEase: 'linear',
-//   nextArrow: '<div class="slider__arrow slider__arrow_next">',
-//   prevArrow: '<div class="slider__arrow slider__arrow_prev">',
-//   // appendArrows: $('.slider__arrows'),
-// })
+$('.slider__box_main').slick({
+  lazyload: 'ondemand',
+  dots: true,
+  // infinite: false,
+  fade: true,
+  cssEase: 'linear',
+  nextArrow: '<div class="slider__arrow slider__arrow_next">',
+  prevArrow: '<div class="slider__arrow slider__arrow_prev">',
+  appendArrows: $('.slider__arrows_main'),
+})
 
 
 // // slider 

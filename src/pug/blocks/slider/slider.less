@@ -1,0 +1,52 @@
+.slider{
+    position: relative;
+    &_main{
+
+        .slick-track{
+            display: flex;
+            align-items: center;
+        }
+    }
+
+
+
+
+    &__arrows{
+
+        position: absolute;
+        width: 100%;
+        top: 40%;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        height: 0;
+        
+        z-index: 100;
+        padding: 0 3px;
+
+    }
+    &__arrow{
+        height: 75px;
+        width: 35px;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: center center;
+        background-color: @arrow_hover;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover,&:active,&:focus{
+            background-color: @wt;
+        }
+
+        &_next{
+            background-image: url(/assets/img/arrow_next.svg);
+            
+        }
+    
+        &_prev{
+            background-image: url(/assets/img/arrow_prev.svg);
+
+        }
+    }
+}
