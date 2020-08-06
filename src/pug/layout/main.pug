@@ -1,6 +1,14 @@
-include ../blocks/header/header
+
+
 include ../blocks/footer/footer
 
+include ../blocks/headline/headline
+include ../blocks/header/header
+
+
+include ../blocks/logo/logo
+include ../blocks/nav/nav
+include ../blocks/phone/phone
 
 block variables
 
@@ -16,6 +24,7 @@ html(lang="ru")
 
 
     body(class=pageClass)
+        +headline()
         +header()
         block content
         +footer()

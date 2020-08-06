@@ -148,10 +148,10 @@ module.exports = {
           to: `${PATHS.assets}fonts`,
           noErrorOnMissing: true,
         },
-        {
-          from: `${PATHS.src}/static`,
-          to: ''
-        },
+        // {
+        //   from: `${PATHS.src}/static`,
+        //   to: ''
+        // },
       ],
     }),
    

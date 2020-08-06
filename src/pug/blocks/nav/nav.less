@@ -1,0 +1,21 @@
+.nav{
+    
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+
+    &__item{
+        height: 70px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .rem(18);
+        font-weight: normal;
+        color: @nav;
+        transition: all 0.3s;
+        &:hover,&:active,&:focus{
+            color: @red;
+        }
+    }
+}
