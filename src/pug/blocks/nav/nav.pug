@@ -1,8 +1,32 @@
 mixin nav()
-    .nav
-        a(href="/").nav__item О школе
-        a(href="/").nav__item Курсы
-        a(href="/").nav__item Онлайн-обучение
-        a(href="/").nav__item Сертификаты
-        a(href="/").nav__item Новости
-        a(href="/").nav__item Контакты
+
+    ul.nav
+        li.nav__item
+            a(href="/").nav__link О школе
+        li.nav__item.nav__item_group
+            a(href="/").nav__link Курсы
+            ul.nav.nav_level2
+                li.nav__item
+                    a(href="/").nav__link Акустическая гитара
+                li.nav__item
+                    a(href="/").nav__link Классическая гитара
+                li.nav__item
+                    a(href="/").nav__link Электрогитара
+                li.nav__item
+                    a(href="/").nav__link Фортепиано
+                li.nav__item
+                    a(href="/").nav__link Барабаны
+                li.nav__item
+                    a(href="/").nav__link Вокал
+                li.nav__item
+                    a(href="/").nav__link Укулеле
+                li.nav__item
+                    a(href="/").nav__link Занятия вокалом для детей
+        li.nav__item
+            a(href="/").nav__link Онлайн-обучение
+        li.nav__item
+            a(href="/").nav__link Сертификаты
+        li.nav__item
+            a(href="/").nav__link Новости
+        li.nav__item
+            a(href="/").nav__link Контакты

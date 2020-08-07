@@ -44,6 +44,20 @@ $('input[type="tel"]').mask('+7 (000) 000-00-00', {
 
 // // inputs
 
+
+
+$('.nav__item_group').hover(
+  function () {
+    $(this).find('.nav_level2').dequeue().stop(true, true).fadeIn(300)
+  },
+  function () {
+    $(this).find('.nav_level2').dequeue().stop(true, true).fadeOut(300)
+  }
+)
+
+ 
+
+
 // //mobile menu
 
 // var burger = $('.burger');
