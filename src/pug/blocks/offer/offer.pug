@@ -1,0 +1,8 @@
+mixin offer(title,text,price,button)
+    .offer
+        .offer__title= title
+        .offer__text
+            p= text
+        .offer__price= price
+        if button
+            +button('Записаться','','','/')

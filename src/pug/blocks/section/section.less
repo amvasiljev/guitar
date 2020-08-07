@@ -1,12 +1,30 @@
 .section{
     width: 100%;
 
+    &_banner{
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
     &__inner{
         width: 100%;
         max-width: 1170px;
         margin: 0 auto;
-        padding: 0;
-        
+        padding: 30px 0 0 0;
+        &_main{
+            padding: 0;
+        }
+        &_banner{
+            height: 692px;
+            display: flex;
+            align-items: center;
+        }
+        &_side{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-between;
+        }
     }
 
     &__box{
@@ -21,6 +39,9 @@
             display: flex;
             flex-flow: wrap;
             justify-content: space-between;
+        }
+        &_side{
+            width: calc(100% - 290px);
         }
     }
 }

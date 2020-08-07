@@ -1,4 +1,4 @@
-mixin news(img,title,text)
+mixin news(img,title,text,tag)
     .news
         a(href="/").news__image.lazy(data-src= img)
         .news__content
@@ -8,3 +8,15 @@ mixin news(img,title,text)
             .news__date 17
                 span июл 2020
             a(href="/").news__more Читать далее
+            if tag
+                .news__tags
+                    a(href="/").news__tag fender
+                    a(href="/").news__tag gibson
+                    a(href="/").news__tag какнаписатьмузыку
+                    a(href="/").news__tag какнаписатьпесню
+                    a(href="/").news__tag квинтовыйкруг
+                    a(href="/").news__tag композитор
+                    a(href="/").news__tag рокгруппа
+                    a(href="/").news__tag творчество
+                    a(href="/").news__tag чтоподаритьженщине
+                    a(href="/").news__tag чтоподаритьмужчине

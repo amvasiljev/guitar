@@ -1,0 +1,11 @@
+mixin feedback(title,reminder)
+    .feedback
+        .feedback__title= title
+        form(action="/").feedback__form
+            label.feedback__label Телефон *
+                input(type="tel").feedback__input
+            label.feedback__label Ваше имя *
+                input(type="text").feedback__input
+            +button('Отправить заявку')
+        if reminder
+            .feedback__reminder= reminder

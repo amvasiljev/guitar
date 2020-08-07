@@ -1,0 +1,35 @@
+.sertificate{
+    height: 312px;
+    display: flex;
+    margin-bottom: 50px;
+    &__image{
+        height: 100%;
+        width: 412px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+    &__content{
+        padding: 20px 40px 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__title {
+        font-weight: 600;
+        font-style: normal;
+        .rem(24);
+        color: @red;
+        line-height: 28px;
+    }
+    &__price{
+        font-weight: 400;
+        font-style: normal;
+        .rem(16);
+        color: @text;
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+
+}

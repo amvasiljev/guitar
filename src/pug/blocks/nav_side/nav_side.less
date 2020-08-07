@@ -1,0 +1,29 @@
+.nav-side{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0 0 5px;
+
+    &__item{
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: @bk_2;
+        .rem(16);
+        border-bottom: 1px solid @line_box;
+        width: 100%;
+        transition: all 0.3s;
+        &:hover,&:active,&:focus{
+            color: @red;
+            &:after{
+               color: @red;
+            }
+        }
+        &:after{
+            content:'◥';
+            transform: rotate(45deg);
+            .rem(8);
+        }
+    }
+}

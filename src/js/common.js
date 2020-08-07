@@ -3,14 +3,44 @@ $(function () {
 });
 
 
+// faq
 
-// // inputs
-// $(document).on('focus', 'input[type="text"]', function () {
-//   $(this).addClass('input_focus');
-// })
-// $(document).on('blur', 'input[type="text"]', function () {
-//   $(this).removeClass('input_focus');
-// })
+
+
+$('.faq__question').on('click', function(){
+  var parent = $(this).parent()
+  
+  var answer = $(this).next()
+
+  $('.faq').not(parent).removeClass('faq_active')
+  parent.toggleClass('faq_active')
+
+  $('.faq__answer').not(answer).slideUp()
+  answer.slideToggle()
+
+})
+
+$('.faq__question').eq(0).trigger('click')
+
+
+
+// end faq
+
+
+// inputs
+$(document).on('focus', 'input[type="text"],input[type="tel"]', function () {
+  $(this).addClass('feedback__input_active');
+})
+$(document).on('blur', 'input[type="text"],input[type="tel"]', function () {
+  if (!$(this).val()){
+    $(this).removeClass('feedback__input_active');
+  }
+  
+})
+
+$('input[type="tel"]').mask('+7 (000) 000-00-00', {
+  placeholder: "+7 (___) ___-__-__"
+});
 
 // // inputs
 

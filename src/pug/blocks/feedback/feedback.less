@@ -1,0 +1,54 @@
+.feedback {
+    padding: 30px 0 40px;
+    &__title {
+        font-weight: 400;
+        font-style: normal;
+        .rem(16);
+        color: @text;
+        margin-bottom: 10px;
+        line-height: 26px;
+        margin-bottom: 25px;
+       
+    }
+    &__form{
+        display: flex;
+        flex-flow: wrap;
+        width: 100%;
+        justify-content: space-between;
+       
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        .rem(16);
+        color: @text;
+        font-weight: 700;
+        margin-bottom: 15px;
+        width: calc(50% - 15px);
+        
+    }
+
+    &__input {
+        height: 40px;
+        border: 1px solid @line_box;
+        margin-top: 10px;
+        padding: 0 10px;
+        width: 100%;
+
+        &_active{
+            border: 1px solid @line;
+        }
+    }
+
+    &__reminder {
+        font-weight: 400;
+        font-style: normal;
+        .rem(16);
+        color: @text;
+        margin-bottom: 10px;
+        line-height: 26px;
+        margin-top: 30px;
+        
+    }
+}

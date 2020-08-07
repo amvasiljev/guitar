@@ -1,0 +1,9 @@
+mixin sert(img,title,price_1,price_2)
+    .sertificate
+        .sertificate__image.lazy(data-src= img)
+        .sertificate__content
+            .sertificate__title= title
+            .sertificate__group
+                .sertificate__price= price_1
+                .sertificate__price= price_2
+            +button('Заказать сертификат','','','/')
