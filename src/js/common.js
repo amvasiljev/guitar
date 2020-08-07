@@ -5,7 +5,30 @@ $(function () {
 
 // faq
 
+(function () {
+  var youtube = $('.video__code');
+  youtube.addClass('test');
+  for (var i = 0; i < youtube.length; i++) {
+      var source = "https://img.youtube.com/vi/" + youtube[i].dataset.embed + "/hqdefault.jpg";
+      var image = new Image();
+      // image.src = source;
+      image.setAttribute('class', 'lazy');
+      image.setAttribute('data-src', source);
+      image.setAttribute('data-lazy', source);
+      image.addEventListener("load", function () {
+          youtube[i].appendChild(image);
+      }(i));
 
+      youtube[i].addEventListener("click", function () {
+          var iframe = document.createElement("iframe");
+          iframe.setAttribute("frameborder", "0");
+          iframe.setAttribute("allowfullscreen", "");
+          iframe.setAttribute("src", "https://www.youtube.com/embed/" + this.dataset.embed + "?rel=0&showinfo=0&autoplay=0");
+          this.innerHTML = "";
+          this.appendChild(iframe);
+      });
+  };
+})();
 
 $('.faq__question').on('click', function(){
   var parent = $(this).parent()
@@ -112,21 +135,20 @@ $('.slider__box_main').slick({
   prevArrow: '<div class="slider__arrow slider__arrow_prev">',
   appendArrows: $('.slider__arrows_main'),
 })
+$('.slider__box_course').slick({
+  lazyload: 'ondemand',
+  dots: true,
+  // infinite: false,
+  fade: true,
+  cssEase: 'linear',
+  nextArrow: '<div class="slider__arrow slider__arrow_next">',
+  prevArrow: '<div class="slider__arrow slider__arrow_prev">',
+  appendArrows: $('.slider__arrows_course'),
+})
 
 
-// // slider 
-
-// // news
-// $('.news').last().addClass('news_final');
-// // news
-
-
-// // products
-// if (/Android|webOS|iPhone|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-//   var product = $('.product');
-//   product.each(function (indx) {
-//     if (indx >= 3) $(this).hide()
-//   })
-// }
-
-//products
+$('.page_courses section').each(function(indx){
+  if(indx % 2 == 0){
+    $(this).addClass('section_uneven')
+  }
+})

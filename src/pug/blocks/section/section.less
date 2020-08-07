@@ -1,5 +1,8 @@
 .section{
     width: 100%;
+    &_uneven{
+        background-color: @bg;
+    }
 
     &_banner{
         background-repeat: no-repeat;
@@ -24,6 +27,11 @@
             display: flex;
             flex-flow: wrap;
             justify-content: space-between;
+        }
+        &_slider{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
         }
     }
 

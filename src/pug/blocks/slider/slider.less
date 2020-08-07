@@ -1,6 +1,8 @@
 .slider{
     position: relative;
-    
+    &_foto{
+        padding: 50px 0;
+    }
 
     &__box{
         &_main{
@@ -14,12 +16,33 @@
                 bottom: 10px;
             }
         }
+
+        &_course{
+            width: 800px;
+            height: 480px;
+            
+            .slick-track{
+                display: flex;
+                align-items: center;
+            }
+            .slick-dots {
+                bottom: 10px;
+            }
+            .slick-dots li button:before{
+                color: @wt;
+            }
+        }
+
         &.slick-slider{
             margin: 0;
         }
     }
 
 
+    &__item{
+        
+        height: 100%;
+    }
 
 
     &__arrows{
