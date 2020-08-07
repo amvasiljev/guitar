@@ -6,6 +6,7 @@
     color: @bk;
     text-align: center;
     width: 100%;
+    position: relative;
 
     &_line {
         height: 75px;
@@ -18,4 +19,26 @@
         text-align: left;
     }
 
+    &__date{
+        position: absolute;
+        top: 5px;
+        right: 0;
+        height: 65px;
+        width: 75px;
+        display: flex;
+        flex-direction: column;
+        .rem(24);
+        background-color: @bg;
+        align-items: center;
+        justify-content: center;
+        font-weight: normal;
+        line-height: normal;
+        span{
+            .rem(10);
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: normal;
+            line-height: normal;
+        }
+    }
 }

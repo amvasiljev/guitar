@@ -1,10 +1,17 @@
-mixin pagination()
-    .pagination__wrapper
-        .pagination
-            a(href="/").pagination__arrow.pagination__arrow_left.lazy(data-src="/assets/img/arrow_pagination.svg")
-            a(href="/").pagination__number.pagination__number_active 1
-            a(href="/").pagination__number 2
-            a(href="/").pagination__number 3
-            a(href="/").pagination__number 4
-            a(href="/").pagination__number 5
-            a(href="/").pagination__arrow.pagination__arrow_right.lazy(data-src="/assets/img/arrow_pagination.svg")
+mixin pagination(page)
+        if page
+            .pagination__wrapper.pagination__wrapper_page
+                .pagination.pagination_page
+                    a(href="/").pagination__page Предыдущая новость
+
+                    a(href="/").pagination__page Следующая новость
+        else
+            .pagination__wrapper
+                .pagination
+                    a(href="/").pagination__arrow.pagination__arrow_left.lazy(data-src="/assets/img/arrow_pagination.svg")
+                    a(href="/").pagination__number.pagination__number_active 1
+                    a(href="/").pagination__number 2
+                    a(href="/").pagination__number 3
+                    a(href="/").pagination__number 4
+                    a(href="/").pagination__number 5
+                    a(href="/").pagination__arrow.pagination__arrow_right.lazy(data-src="/assets/img/arrow_pagination.svg")
