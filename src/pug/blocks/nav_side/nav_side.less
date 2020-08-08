@@ -4,6 +4,15 @@
     align-items: flex-start;
     padding: 0 0 0 5px;
 
+    @media @768{
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+    @media @320{
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+
     &__item{
         height: 32px;
         display: flex;
@@ -14,6 +23,15 @@
         border-bottom: 1px solid @line_box;
         width: 100%;
         transition: all 0.3s;
+
+        @media @768{
+            width: calc(33% - 15px);
+        }
+        @media @320{
+            width: calc(50% - 10px);
+            .rem(12);
+        }
+
         &:hover,&:active,&:focus{
             color: @red;
             &:after{

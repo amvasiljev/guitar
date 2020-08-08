@@ -37,6 +37,7 @@
             display: flex;
             flex-flow: wrap;
             justify-content: space-between;
+           
         }
         &_slider{
             display: flex;
@@ -70,6 +71,12 @@
         }
         &_side{
             width: calc(100% - 290px);
+            @media @768{
+                width: 100%;
+            }
+            @media @320{
+                width: 100%;
+            }
         }
         &_feedback{
             display: flex;

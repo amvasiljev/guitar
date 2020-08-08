@@ -1,11 +1,20 @@
 .sidebar{
     width: 260px;
 
+    @media @768{
+        width: 100%;
+    }
+    @media @320{
+        width: 100%;
+    }
     &__title{
         font-weight: 400;
         font-style: normal;
         .rem(28);
         color: @bk;
         line-height: 36px;
+        @media @320{
+            .rem(18);
+        }
     }
 }

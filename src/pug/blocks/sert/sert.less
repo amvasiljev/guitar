@@ -2,12 +2,23 @@
     height: 312px;
     display: flex;
     margin-bottom: 50px;
+
+    @media @320{
+        height: unset;
+        flex-direction: column;
+        box-shadow: @box;
+    }
     &__image{
         height: 100%;
         width: 412px;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
+        @media @320{
+           width: 100%;
+           height: 200px;
+           background-position: 0 center;
+        }
     }
     &__content{
         padding: 20px 40px 70px;
@@ -15,6 +26,9 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+        @media @320{
+            padding: 10px;
+        }
     }
     &__title {
         font-weight: 600;
@@ -22,6 +36,10 @@
         .rem(24);
         color: @red;
         line-height: 28px;
+        @media @320{
+            .rem(16);
+            margin-bottom: 10px;
+        }
     }
     &__price{
         font-weight: 400;
@@ -30,6 +48,11 @@
         color: @text;
         line-height: 26px;
         margin-bottom: 10px;
+        @media @320{
+            .rem(14);
+            line-height: normal;
+            margin-bottom: 6px;
+        }
     }
 
 }
