@@ -1,5 +1,9 @@
 .feedback {
     padding: 30px 0 40px;
+    &_course{
+        max-width: 800px;
+    }
+
     &__title {
         font-weight: 400;
         font-style: normal;
@@ -26,7 +30,10 @@
         font-weight: 700;
         margin-bottom: 15px;
         width: calc(50% - 15px);
-        
+        &_textarea{
+            width: 100%;
+            margin-bottom: 0;
+        }
     }
 
     &__input {
@@ -36,11 +43,16 @@
         padding: 0 10px;
         width: 100%;
 
-        &_active{
-            border: 1px solid @line;
-        }
+        
     }
 
+    &__textarea{
+        border: 1px solid @line_box;
+        margin-top: 10px;
+        padding: 10px 10px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
     &__reminder {
         font-weight: 400;
         font-style: normal;
@@ -50,5 +62,8 @@
         line-height: 26px;
         margin-top: 30px;
         
+    }
+    &_active{
+        border: 1px solid @line;
     }
 }

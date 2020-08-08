@@ -1,0 +1,15 @@
+mixin section_16()
+    section.section
+        .section__inner
+            +title('Контакты')
+            +subtitle('Звоните по всем вопросам ежедневно: 8:00 — 22:00')
+            .section__info
+                +phone('phone_info')
+                +subtitle('Очные занятия проходят:')
+            .section__box.section__box_contacts
+                .section__box.section__box_map
+                    +subtitle('м. Чертановская. Сумской проезд, дом 8, корпус 3')
+                    +map('map-yandex','/assets/img/map_1.jpg')
+                .section__box.section__box_map
+                    +subtitle('м. Перово, Зелёный проспект, 3/10')
+                    +map('map-yandex_1','/assets/img/map_2.jpg')

@@ -1,0 +1,94 @@
+.ymap-container,
+.ymap-container-1 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-color: @wt;
+  background-position: center center;
+  background-size: cover;
+  // margin-top: 80px;
+  @media @320{
+    margin-top: 20px;
+  }
+}
+
+
+#map-yandex,#map-yandex_1 {
+  position: relative;
+  z-index: 7;
+  width: 100%;
+  height: 310px;
+  cursor: pointer;
+  background-color: transparent;
+  @media @768{
+    height: 400px;
+  }
+  @media @320{
+    height: 400px;
+  }
+}
+
+.ymap-container-main>#map-yandex {
+  height: 100%;
+}
+
+
+/* Индикатор загрузки, который показывается до загрузки карты */
+.loader {
+  position: absolute;
+  z-index: 15;
+  top: -100%;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #000000;
+  transition: opacity .7s ease;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .55);
+}
+
+.loader:after,
+.loader:before {
+  box-sizing: border-box;
+}
+
+.loader.is-active {
+  top: 0;
+  opacity: 1;
+}
+
+.loader-default:after {
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  width: 48px;
+  height: 48px;
+  content: '';
+  animation: rotation 1s linear infinite;
+  border: solid 8px #ffffff;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: .5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

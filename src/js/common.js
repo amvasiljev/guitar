@@ -51,14 +51,13 @@ $('.faq__question').eq(0).trigger('click')
 
 
 // inputs
-$(document).on('focus', 'input[type="text"],input[type="tel"]', function () {
-  $(this).addClass('feedback__input_active');
+$(document).on('focus', 'input[type="text"],input[type="tel"],textarea', function () {
+  $(this).addClass('feedback_active');
 })
-$(document).on('blur', 'input[type="text"],input[type="tel"]', function () {
+$(document).on('blur', 'input[type="text"],input[type="tel"],textarea', function () {
   if (!$(this).val()){
-    $(this).removeClass('feedback__input_active');
+    $(this).removeClass('feedback_active');
   }
-  
 })
 
 $('input[type="tel"]').mask('+7 (000) 000-00-00', {
@@ -152,3 +151,128 @@ $('.page_courses section').each(function(indx){
     $(this).addClass('section_uneven')
   }
 })
+
+
+
+
+
+
+var spinner = $('.ymap-container').children('.loader');
+var check_if_load = false;
+var myMapTemp, myPlacemarkTemp;
+
+function init() {
+    var myMapTemp = new ymaps.Map("map-yandex", {
+        center: [55.635040, 37.611329],
+        zoom: 15,
+        controls: ['zoomControl', 'fullscreenControl'],
+    });
+    myMapTemp.behaviors.disable("scrollZoom");
+    var myPlacemarkTemp = new ymaps.Placemark([55.635040, 37.611329], {
+        balloonContent: "Здесь может быть ваш адрес",
+    }, {
+        iconLayout: 'default#imageWithContent',
+        iconImageHref: '/assets/img/marker.svg',
+        iconImageSize: [50, 50],
+        iconImageOffset: [-25, -50],
+    });
+    myMapTemp.geoObjects.add(myPlacemarkTemp);
+    var layer = myMapTemp.layers.get(0).get(0);
+    waitForTilesLoad(layer).then(function () {
+        spinner.removeClass('is-active');
+    });
+
+
+    var myMapTemp_1 = new ymaps.Map("map-yandex_1", {
+        center: [55.748711, 37.769819],
+        zoom: 15,
+        controls: ['zoomControl', 'fullscreenControl'],
+    });
+    myMapTemp_1.behaviors.disable("scrollZoom");
+    var myPlacemarkTemp_1 = new ymaps.Placemark([55.748711, 37.769819], {
+        balloonContent: "Здесь может быть ваш адрес",
+    }, {
+        iconLayout: 'default#imageWithContent',
+        iconImageHref: '/assets/img/marker.svg',
+        iconImageSize: [50, 50],
+        iconImageOffset: [-25, -50],
+    });
+    myMapTemp_1.geoObjects.add(myPlacemarkTemp_1);
+    var layer = myMapTemp_1.layers.get(0).get(0);
+    waitForTilesLoad(layer).then(function () {
+        spinner.removeClass('is-active');
+    });
+
+
+}
+
+function waitForTilesLoad(layer) {
+    return new ymaps.vow.Promise(function (resolve, reject) {
+        var tc = getTileContainer(layer),
+            readyAll = true;
+        tc.tiles.each(function (tile, number) {
+            if (!tile.isReady()) {
+                readyAll = false;
+            }
+        });
+        if (readyAll) {
+            resolve();
+        } else {
+            tc.events.once("ready", function () {
+                resolve();
+            });
+        }
+    });
+}
+
+function getTileContainer(layer) {
+    for (var k in layer) {
+        if (layer.hasOwnProperty(k)) {
+            if (
+                layer[k] instanceof ymaps.layer.tileContainer.CanvasContainer ||
+                layer[k] instanceof ymaps.layer.tileContainer.DomContainer
+            ) {
+                return layer[k];
+            }
+        }
+    }
+    return null;
+}
+
+function loadScript(url, callback) {
+    var script = document.createElement("script");
+
+    if (script.readyState) { // IE
+        script.onreadystatechange = function () {
+            if (script.readyState == "loaded" ||
+                script.readyState == "complete") {
+                script.onreadystatechange = null;
+                callback();
+            }
+        };
+    } else {
+        script.onload = function () {
+            callback();
+        };
+    }
+
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+
+var ymap = function () {
+    $('.ymap-container').mouseenter(function () {
+        if (!check_if_load) {
+            check_if_load = true;
+            spinner.addClass('is-active');
+            loadScript("https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;loadByRequire=1", function () {
+                ymaps.load(init);
+            });
+        }
+    });
+}
+
+$(function () {
+    ymap();
+});

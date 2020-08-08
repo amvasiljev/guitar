@@ -1,11 +1,14 @@
-mixin feedback(title,reminder)
-    .feedback
+mixin feedback(title,reminder,text,cl)
+    .feedback(class= cl)
         .feedback__title= title
         form(action="/").feedback__form
             label.feedback__label Телефон *
                 input(type="tel").feedback__input
             label.feedback__label Ваше имя *
                 input(type="text").feedback__input
+            if text
+            label.feedback__label.feedback__label_textarea(for="textarea") Введите ваш вопрос *
+            textarea#textarea(name="", cols="30", rows="10").feedback__textarea
             +button('Отправить заявку')
         if reminder
             .feedback__reminder= reminder
