@@ -7,8 +7,8 @@ mixin feedback(title,reminder,text,cl)
             label.feedback__label Ваше имя *
                 input(type="text").feedback__input
             if text
-            label.feedback__label.feedback__label_textarea(for="textarea") Введите ваш вопрос *
-            textarea#textarea(name="", cols="30", rows="10").feedback__textarea
+                label.feedback__label.feedback__label_textarea(for="textarea") Введите ваш вопрос *
+                textarea#textarea(name="", cols="30", rows="10").feedback__textarea
             +button('Отправить заявку')
         if reminder
             .feedback__reminder= reminder

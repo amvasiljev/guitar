@@ -10,6 +10,11 @@
         color: @nav;
         margin-bottom: 15px;
         transition: all 0.3s;
+
+        @media @320{
+            .rem(12);
+            margin-bottom: 7px;
+        }
         &:hover,&:active,&:focus{
             color: @red;
         }

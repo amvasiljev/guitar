@@ -5,18 +5,32 @@
     margin-bottom: 30px;
     box-shadow: @box;
     background-color: @wt;
+    @media @320{
+        height: unset;
+        min-height: unset;
+        margin-bottom: 15px;
+    }
     &__image{
         flex: 0 0 230px;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
         height: 230px;
+        @media @320{
+            flex: 0 0 80px;
+            height: 80px;
+        }
     }
     &__content{
         
         width: calc(100% - 230px);
         padding: 20px;
         position: relative;
+        @media @320{
+            width: calc(100% - 80px);
+            padding: 5px 10px;
+        }
+       
 
     }
     &__title{
@@ -27,13 +41,22 @@
         color: @bk_2;
         margin-bottom: 20px;
         display: block;
+        width: calc(100% - 80px);
+        @media @320{
+            .rem(14);
+            margin-bottom: 10px;
+        }
         &:hover,&:focus,&:active{
             color: @red;
+            
         }
     }
     &__text{
         margin-bottom: 20px;
         width: calc(100% - 75px);
+        @media @320{
+            display: none;
+        }
     }
     &__date{
         position: absolute;
@@ -54,9 +77,13 @@
         }
     }
 
-    &__link{
+    &__more{
         color: @nav;
         transition: all 0.3s;
+        @media @320{
+            .rem(12);
+            display: inline;
+        }
         &:hover,&:focus,&:active{
             color: @red;
         }

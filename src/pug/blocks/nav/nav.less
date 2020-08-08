@@ -5,6 +5,7 @@
     width: 70%;
     padding: 0;
 
+   
     &_level2 {
         display: none;
         position: absolute;
@@ -33,7 +34,27 @@
             .rem(12);
             
                 border-bottom: 1px solid @line_box;
-            
+                &:before{
+                    display: none;
+                }
+            @media @768,@320{
+                border-bottom:none;
+            }
+        }
+        @media @768,@320{
+            position: unset;
+            width: 100%;
+            box-shadow: unset;
+            border-left: 1px solid @line_box;
+
+            li{
+                background-image: none;
+                a{
+                    text-transform: unset;
+                    min-height: 35px;
+                    padding-left: 20px;
+                }
+            }
         }
     }
 
@@ -41,10 +62,16 @@
         list-style-type: none;
         height: 100%;
         margin: 0;
-
+        @media @768,@320{
+            height: unset;
+        }
         &_group {
             position: relative;
+            @media @768,@320{
+                height: unset;
+            }
         }
+        
     }
 
     &__link {
@@ -57,11 +84,150 @@
         font-weight: normal;
         color: @nav;
         transition: all 0.3s;
+        position: relative;
+        &:before{
+            content:'';
+            display: block;
+            height: 2px;
+            width: 0;
+            background-color: @bg;
+            bottom: 10px;
+            left: 0;
+            position: absolute;
+        }
+
+        &_active{
+            color: @red;
+            &:before{
+                width: 100%;
+            }
+            @media @768,@320{
+                &:before{
+                    display: none;
+                }
+            }
+        }
+
+        @media @1024{
+            .rem(15);
+            padding: 0 10px;
+        }
 
         &:hover,
         &:active,
         &:focus {
             color: @red;
+            &:before{
+                width: 100%;
+            }
+            @media @768,@320{
+                &:before{
+                    display: none;
+                }
+            }
         }
+
+        &_mobile {
+            color: @nav;
+            font-style: normal;
+            font-weight: 600;
+            .rem(16);
+            line-height: 110%;
+            min-height: 50px;
+            height: unset;
+            justify-content: flex-start;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: @red;
+            }
+
+            
+        }
+       
+        &_mobile&_group{
+            position: relative;
+            &:after{
+                content:'';
+                display: block;
+                width: 17px;
+                height: 17px;
+                position: absolute;
+                top: 20px;
+                right: 6px;
+                background-image: url('/assets/img/down_mobile.svg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                transition: all 0.3s
+            }
+        }
+        &_active&_mobile {
+            color: @red;
+            &:before {
+                display: none;
+            }
+        }
+        &_open{
+            &:after{
+                transform: rotate(180deg);
+                transition: all 0.3s
+            }
+        }
+    }
+
+    &_outer {
+        position: fixed;
+        top: 0;
+        right: -287px;
+        background: @wt;
+        height: 100vh;
+        width: 287px;
+        z-index: 1000;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 15px 30px;
+        
+        
+        @media @768, @320{
+        display: flex;
+
+       }
+    }
+
+    &_mobile {
+        
+        height: unset;
+        width: 100%;
+        position: relative;
+        li{
+            padding-left: 0;
+        }
+
+    }
+
+    &_close {
+        background-image: url(/assets/img/menu_close.svg);
+        width: 22px;
+        height: 22px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: -30px;
+    }
+
+    &__fake{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(38, 38, 38, 0.8);
+        display: none;
+        z-index: 100;
     }
 }

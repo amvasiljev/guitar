@@ -18,6 +18,13 @@
         max-width: 1170px;
         margin: 0 auto;
         padding: 40px 0;
+
+        @media @1024,@768{
+            padding: 30px 20px;
+        }
+        @media @320{
+            padding: 20px 10px;
+        }
         &_main{
             padding: 0;
         }
@@ -40,6 +47,10 @@
 
     &__box{
         padding: 30px 0;
+
+        @media @320{
+            padding: 15px 0;
+        }
 
         &_advantages{
             display: flex;

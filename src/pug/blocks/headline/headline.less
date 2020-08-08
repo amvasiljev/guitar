@@ -11,7 +11,21 @@
         margin: 0 auto;
         padding: 0;
         display: flex;
-      
+      @media @768{
+          height: 50px;
+          align-items: center;
+          padding: 0 10px;
+      }
+      @media @320{
+          height: 50px;
+          align-items: center;
+          padding: 0 10px;
+          flex-flow: wrap;
+
+        &>a{
+            display: none;
+        }
+      }
 
     }
     &__item{
@@ -28,5 +42,6 @@
         &:hover,&:active,&:focus{
             background-color: @red_hover;
         }
+      
     }
 }

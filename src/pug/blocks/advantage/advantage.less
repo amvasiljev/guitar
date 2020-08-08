@@ -13,6 +13,17 @@
     .rem(16);
     font-weight: normal;
     background-color: @wt;
+    margin-bottom: 30px;
+
+    @media @1024,@768{
+        width: calc(33% - 15px);
+    }
+    @media @320{
+        width: 100%;
+        padding: 0 15px;
+        min-height: 100px;
+        height: unset;
+    }
 
     &_course{
         width: calc(33% - 15px);
@@ -23,5 +34,13 @@
         padding: 0;
         visibility: hidden;
         margin: 0;
+        min-height: unset;
+        @media @320{
+            height: 0;
+        padding: 0;
+        visibility: hidden;
+        margin: 0;
+        min-height: unset;
+        }
     }
 }

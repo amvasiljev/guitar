@@ -6,6 +6,13 @@
     box-shadow: @box;
     background-color: @wt;
 
+    @media @768{
+        width: calc(50% - 15px);
+    }
+    @media @320{
+        width: 100%;
+    }
+
     &__image{
         flex: 0 0 215px;
         background-repeat: no-repeat;
@@ -27,6 +34,9 @@
         margin-bottom: 15px;
         color: @bk;
         text-align: center;
+        @media @320{
+            .rem(18);
+        }
     }
     &__caption{
         .rem(18);
@@ -35,5 +45,8 @@
         line-height: 1.44;
         margin-bottom: 25px;
         text-align: center;
+        @media @320{
+            .rem(14);
+        }
     }
 }
