@@ -157,6 +157,32 @@ $('.slider__box_course').slick({
   nextArrow: '<div class="slider__arrow slider__arrow_next">',
   prevArrow: '<div class="slider__arrow slider__arrow_prev">',
   appendArrows: $('.slider__arrows_course'),
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 })
 
 

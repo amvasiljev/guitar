@@ -1,9 +1,12 @@
 .offer {
     padding: 50px 40px 40px 40px;
-    // border: 1px solid @line_box;
+    
     background-color: @wt;
     box-shadow: @box;
     margin-bottom: 30px;
+    @media @320{
+        padding: 20px;
+    }
     &__title {
         font-weight: 600;
         font-style: normal;
@@ -12,6 +15,9 @@
         color: @red;
         text-transform: uppercase;
         margin-bottom: 15px;
+        @media @320{
+           .rem(16);
+        }
     }
 
     &__text {}
@@ -23,5 +29,10 @@
         line-height: 26px;
         color: @red;
         margin-bottom: 20px;
+        @media @320{
+            .rem(14);
+            font-weight: 600;
+            line-height: 1.44;
+        }
     }
 }

@@ -7,9 +7,7 @@
                 content:'–'
             }
         }
-        // .faq__answer{
-        //     display: block;
-        // }
+      
     }
     &__question{
         display: none;
@@ -26,6 +24,9 @@
         border: 1px solid @line_box;
         border-left: 3px solid @line_box;
         cursor: pointer;
+        @media @320{
+            .rem(14);
+        }
 
         &:after{
             content:'+';
@@ -42,5 +43,10 @@
         border-right: 1px solid @line_box;
         border-bottom: 1px solid @line_box;
         background-color: @wt;
+        @media @320{
+            
+            padding: 15px;
+           
+        }
     }
 }

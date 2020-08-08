@@ -2,6 +2,9 @@
     position: relative;
     &_foto{
         padding: 50px 0;
+        @media @320{
+            padding: 15px 0;
+        }
     }
 
     &__box{
@@ -20,6 +23,15 @@
         &_course{
             width: 800px;
             height: 480px;
+
+            @media @768{
+                width: auto;
+               height: auto;
+            }
+            @media @320{
+               width: auto;
+               height: auto;
+            }
             
             .slick-track{
                 display: flex;
@@ -42,6 +54,9 @@
     &__item{
         
         height: 100%;
+        // @media @320{
+        //     width: 100%;
+        // }
     }
 
 
