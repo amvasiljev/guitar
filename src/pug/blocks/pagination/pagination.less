@@ -47,8 +47,8 @@
         }
 
         @media @320{
-            height: 44px;
-            width: 44px;
+            height: 40px;
+            width: 40px;
             
         }
         // @media @300{
@@ -83,14 +83,17 @@
         opacity: 0.3;
         transition: all 0.3s;
         padding: 0 10px;
-        
+        color: @bk;
+        &:visited{
+            color: @bk;
+        }
         &:hover,&:focus,&:active{
             opacity: 1;
         }
 
         @media @320{
             width: unset;
-            .rem(14);
+            .rem(12);
             height: 30px;
         }
       
@@ -126,8 +129,8 @@
         cursor: pointer;
 
         @media @320{
-            height: 44px;
-            width: 44px;
+            height: 40px;
+            width: 40px;
             margin-right: 3px;
         }
         // @media @300{

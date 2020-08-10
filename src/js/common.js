@@ -80,6 +80,25 @@ $('.nav__item_group').hover(
  
 
 
+
+$('.offer').on('click', '.button', function(){
+  var offerTitle = $(this).parent().find('.offer__title').text()
+
+  console.log(offerTitle);
+  $('.popup__title').text("Запись на " + offerTitle.toLowerCase())
+
+})
+
+
+$('.banner').on('click','.button',function(){
+    if($(this).attr('href') == 'javascript:;'){
+      $('.popup__title').text($(this).text())
+    } return;
+})
+
+
+
+
 //mobile menu
 
 var mobileNav = $('<div>').addClass('nav_mobile');

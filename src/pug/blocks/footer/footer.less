@@ -82,13 +82,17 @@
         .rem(12);
       }
   }
-  &__copyright{
+  &__copyright,
+  &__copyright a{
+    color: @text;
     width: 100%;
     max-width: 1170px;
     margin: 0 auto;
     padding: 0 0 30px 0;
     .rem(10);
     line-height: 25px;
+
+
     @media @1024,@768{
       padding: 20px;
     }
@@ -96,5 +100,11 @@
       height: unset;
       padding: 10px;
    }
+  }
+  &__copyright a{
+    &:hover,&:active,&:focus{
+      color: @red;
+      text-decoration: underline;
+    }
   }
 }

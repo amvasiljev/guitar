@@ -1,5 +1,5 @@
-mixin course(img,title,caption)
-    .course
+mixin course(img,title,caption,cl)
+    .course(class= cl)
         a(href="").course__image.lazy(data-src= img)
         .course__content
             .course__title= title

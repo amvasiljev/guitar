@@ -1,0 +1,12 @@
+mixin popup(title,text,cl,id)
+    .popup(class= cl id= id)
+        .popup__title= title
+        form(action="/").popup__form
+            label.popup__label Телефон *
+                input(type="tel").popup__input
+            label.popup__label Ваше имя *
+                input(type="text").popup__input
+            if text
+                label.popup__label.popup__label_textarea(for="textarea") Введите ваш вопрос *
+                textarea#textarea(name="", cols="30", rows="10").popup__textarea
+            +button('Отправить')

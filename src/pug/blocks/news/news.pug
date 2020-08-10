@@ -1,8 +1,15 @@
-mixin news(img,title,text,tag)
+mixin news(img,title,text,tag,category)
     .news
         a(href="/").news__image.lazy(data-src= img)
         .news__content
             a(href="/").news__title= title
+            if category
+                .news__category
+                    .news__start Размещено в: 
+                    a(href="/").news__tag fender
+                    a(href="/").news__tag gibson
+                    a(href="/").news__tag какнаписатьмузыку
+
             .news__text
                 p= text
             .news__date 17

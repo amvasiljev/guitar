@@ -1,28 +1,33 @@
-.feedback {
-    padding: 30px 0 40px;
+.popup {
+    padding: 40px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
     @media @320{
-        padding: 0;
+        padding: 20px 10px;
     }
-    &_course{
-        max-width: 800px;
-    }
+   
 
     &__title {
-        font-weight: 400;
+        font-weight: 700;
         font-style: normal;
-        .rem(16);
+        .rem(26);
         color: @text;
         margin-bottom: 10px;
         line-height: 26px;
         margin-bottom: 25px;
+        text-align: center;
+        @media @320{
+            .rem(18);
+        }
        
     }
     &__form{
         display: flex;
         flex-flow: wrap;
         width: 100%;
-        justify-content: space-between;
-       
+        justify-content: center;
+        max-width: 414px; 
     }
 
     &__label {
@@ -32,7 +37,7 @@
         color: @text;
         font-weight: 700;
         margin-bottom: 15px;
-        width: calc(50% - 15px);
+        width: 100%;
         @media @320{
             width: 100%;
         }
@@ -59,17 +64,8 @@
         width: 100%;
         margin-bottom: 15px;
     }
-    &__reminder {
-        font-weight: 400;
-        font-style: normal;
-        .rem(16);
-        color: @text;
-        margin-bottom: 10px;
-        line-height: 26px;
-        margin-top: 30px;
-        
-    }
+    
     &_active{
-        border: 1px solid @line !important;
+        border: 1px solid @line;
     }
 }
