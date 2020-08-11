@@ -1,0 +1,78 @@
+.teacher{
+    padding: 30px 0 0 0;
+    display: flex;
+    @media @320{
+        flex-direction: column;
+    }
+    &__image{
+        width: 300px;
+        
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: contain;
+        display: flex;
+        flex-direction: column;
+        
+        @media @320{
+            align-items: center;
+            width: 100%;
+            max-width: 414px;
+            margin-bottom: 20px;
+        }
+        img{
+            margin-bottom: 30px;
+        }
+    }
+
+    &__content{
+        padding: 0 30px;
+        position: relative;
+        @media @320{
+            padding: 0;
+        }
+    }
+    &__name{
+        .rem(24);
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: @bk;
+        
+        @media @320{
+            .rem(18);
+            margin-bottom: 30px;
+        }
+    }
+    &__job{
+        .rem(18);
+        color: @bk;
+        font-weight: 600;
+        line-height: 1.44;
+        margin-bottom: 25px;
+        
+        @media @320{
+            .rem(14);
+        }
+    }
+   
+    
+    &__video{
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        height: 60px;
+        width: 180px;
+        background-repeat: no-repeat;
+        background-position: 0 center;
+        background-size: 50px;
+        .rem(14);
+        font-weight: 700;
+        padding: 0 0 0 60px;
+        display: flex;
+        align-items: center;
+        @media @320{
+           position: unset;
+           margin: 0 auto;
+        }
+    }
+}
