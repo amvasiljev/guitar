@@ -1,6 +1,17 @@
 .header{
     width: 100%;
-
+    // position: sticky;
+    // top: 35px;
+    background-color: @wt;
+    z-index: 200;
+    box-shadow: none;
+    position: unset;
+    &_fixed{
+      
+        position: fixed;
+        top: 42px;
+        box-shadow: @box;
+    }
     @media @768,@320{
         display: none;
     }
@@ -13,6 +24,11 @@
         height: 113px;
         align-items: center;
         justify-content: space-between;
+
+        &_short{
+            height: 50px;
+            justify-content: flex-end;
+        }
      
         @media @1024,@768{
             padding: 0 20px;

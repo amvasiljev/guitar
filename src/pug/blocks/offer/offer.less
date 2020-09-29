@@ -1,11 +1,23 @@
 .offer {
-    padding: 50px 40px 40px 40px;
-    
+    padding: 25px 40px 25px 30px;
+    display: flex;
     background-color: @wt;
     box-shadow: @box;
     margin-bottom: 30px;
     @media @320{
         padding: 20px;
+    }
+    &__image{
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        flex: 0 0 187px;
+        margin: 0 30px 0 0;
+        height: 240px;
+    }
+    &__content{
+        // padding: 50px 40px 40px 40px;
+        padding: 25px 0 15px 10px;
     }
     &__title {
         font-weight: 600;

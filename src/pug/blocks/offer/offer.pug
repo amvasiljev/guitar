@@ -1,8 +1,10 @@
-mixin offer(title,text,price,button)
+mixin offer(title,text,price,button,image)
     .offer
-        .offer__title= title
-        .offer__text
-            p= text
-        .offer__price= price
-        if button
-            +button('Записаться','','','','#popup_1')
+        .offer__image.lazy(data-src= image)
+        .offer__content
+            .offer__title= title
+            .offer__text
+                p= text
+            .offer__price= price
+            if button
+                +button('Записаться','','','','#popup_1')

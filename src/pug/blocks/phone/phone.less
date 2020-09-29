@@ -1,10 +1,14 @@
 .phone{
     display: block;
     &_headline{
-        .rem(12);
+        .rem(16);
         color: @wt;
         margin-left: 3px;
         font-weight: 700;
+        @media @320{
+            .rem(12);
+            white-space: nowrap;
+        }
     }
     &_footer{
         .rem(30);

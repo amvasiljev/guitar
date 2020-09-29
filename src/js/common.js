@@ -335,3 +335,21 @@ var ymap = function () {
 $(function () {
     ymap();
 });
+
+
+
+$(document).scroll(function () {
+  scrollTop = $(this).scrollTop();
+  if (scrollTop > 0) {
+    
+  $('.logo').addClass('logo_hide')
+
+   $('.header').addClass('header_fixed')
+   $('.header__inner').addClass('header__inner_short')
+   
+  } else {
+    $('.header__inner').removeClass('header__inner_short')
+    $('.header').removeClass('header_fixed')
+    $('.logo').removeClass('logo_hide')
+  }
+})

@@ -1,10 +1,13 @@
 mixin headline()
     .headline
         .headline__inner
-            a(href="/").headline__item м. Чертановская
-            a(href="/").headline__item м. Перово
-            .headline__item Запись на первый урок: 
+            .headline__box
+                a(href="/").headline__item м. Чертановская
+                a(href="/").headline__item м. Перово
+           
+            a(href="javascript:;"  data-fancybox="" data-src="#popup_1").headline__item.headline__item_phone Заказать обратный звонок
+            .headline__item Звоните ежедневно 8:00 - 22:00: 
                 +phone('phone_headline')
             
-            a(href="/").headline__item Открыто очное обучение!
+            //- a(href="/").headline__item Открыто очное обучение!
             +burger()

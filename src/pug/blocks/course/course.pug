@@ -2,6 +2,7 @@ mixin course(img,title,caption,cl)
     .course(class= cl)
         a(href="").course__image.lazy(data-src= img)
         .course__content
+            .course__price От 500 рублей
             .course__title= title
             .course__caption= caption
             +button('Подробнее','','','/')

@@ -1,2 +1,4 @@
-mixin advantage(title,cl)
-    .advantage(class= cl)= title
+mixin advantage(title,cl,image)
+    .advantage(class= cl)
+        .advantage__image.lazy(data-src= image)
+        .advantage__title= title
