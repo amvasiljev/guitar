@@ -6,6 +6,7 @@
     margin-bottom: 30px;
     @media @320{
         padding: 20px;
+        flex-direction: column;
     }
     &__image{
         background-repeat: no-repeat;
@@ -14,6 +15,11 @@
         flex: 0 0 187px;
         margin: 0 30px 0 0;
         height: 240px;
+        @media @320{
+            flex: unset;
+            height: 180px;
+            width: 100%;
+        }
     }
     &__content{
         // padding: 50px 40px 40px 40px;
