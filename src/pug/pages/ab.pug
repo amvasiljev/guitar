@@ -6,9 +6,22 @@ extends ../layout/main
 block variables
     -var title = 'about'
     -var description = 'about'
-    -var pageClass = 'about'
+    -var pageClass = ''
 
 block content
    
-    +section_1()
+    +section_4()
+    section.section
+        .section__inner.section__inner_about
+            +about()
+    section.section.section_uneven
+        .section__inner.section__inner_about
+            +about('about_reverse')
+    section.section
+        .section__inner.section__inner_about
+            +about()
+
+    section.section.section_uneven
+        .section__inner.section__inner_callback
+            +about('about_reverse','callback')
     

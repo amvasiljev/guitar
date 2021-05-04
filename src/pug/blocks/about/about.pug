@@ -1,0 +1,18 @@
+mixin about(cl,callback)
+    if callback 
+        .about(class= cl)
+            .about__image
+                +callback()
+            .about__content
+                +title('Оставь заявку и мы пригласим тебя на пробный урок,','title_left')
+                .about__text 
+                    p где познакомим тебя со всеми курсами и ... У нас одна из самых доступных цен на обучение по Москве- от 600 рублей за 55мин.
+    else 
+        .about(class= cl)
+            .about__image
+                img.lazy(data-src="/assets/img/about/about_1.png")
+            .about__content
+                +title('Учитесь по современной программе','title_left')
+                .about__text 
+                    p Программа составляется исходя из твоих музыкальных интересов, чтобы ты исполнил свою любимую песню на ближайшем концерте или квартирнике.
+        

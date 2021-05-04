@@ -1,0 +1,7 @@
+mixin callback()
+    .callback
+        form(action="/").callback__form
+            input(type="tel").callback__input.callback__input_tel
+            input(type="text" placeholder="Имя").callback__input
+            +button('Оставить заявку','','submit')
+            
